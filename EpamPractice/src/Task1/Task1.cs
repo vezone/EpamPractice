@@ -1,16 +1,14 @@
-using System;
-
 namespace EpamPractice
 {
     ///<summary>
     ///Класс для выполнения первого задания
     ///</summary>
-    class ReaderFormatter : ITask
+    class Task1 : ITask
     {
         ///<summary>
         ///Конструктор по умолчанию
         ///</summary>
-        public ReaderFormatter()
+        public Task1()
         {
         }
 
@@ -20,7 +18,7 @@ namespace EpamPractice
         ///<param name="input">строка с двумя числами decimal типа</param>
         private void ParseInput(string input)
         {
-            string[] parsedString = input.Split(',');
+            System.String[] parsedString = input.Split(',');
             System.Decimal x; 
             System.Decimal y;
             if (System.Decimal.TryParse(parsedString[0], out x))
@@ -50,7 +48,7 @@ namespace EpamPractice
         {
             while (true)
             {
-                System.Console.WriteLine("1. Input from console\n2. Input from file\nPrint \'e\' to exit!");
+                System.Console.WriteLine("1. Input from console\n2. Input from file\nPrint \'b\' to back!");
                 System.Console.Write("select option: ");
                 var consoleKey = System.Console.ReadKey().Key;
                 switch (consoleKey)
@@ -59,7 +57,7 @@ namespace EpamPractice
                     {
                         System.Console.WriteLine("Input pattern\n\t\t{x},{y}\nExample\n\t\tif x = 23.0123 and y = 0.123 then input \"23.0123,0.123\" without \"");
                         System.Console.Write("input: ");
-                        string readedString = System.Console.ReadLine();
+                        System.String readedString = System.Console.ReadLine();
                         if (readedString.IndexOf(',') != -1)
                         {
                             ParseInput(readedString);
@@ -83,10 +81,10 @@ namespace EpamPractice
                             System.Console.WriteLine($"\t\t- {file}");
                         }    
                         System.Console.Write("write file path: ");
-                        string filePath = System.Console.ReadLine();
+                        System.String filePath = System.Console.ReadLine();
                         if (System.IO.File.Exists(filePath))
                         {
-                            string fileData = System.IO.File.ReadAllText(filePath);
+                            System.String fileData = System.IO.File.ReadAllText(filePath);
                             if (fileData.IndexOf(',') != -1)
                             {
                                 ParseInput(fileData);
@@ -102,7 +100,7 @@ namespace EpamPractice
                         }
                         break;
                     }
-                    case System.ConsoleKey.E:
+                    case System.ConsoleKey.B:
                     {
                         System.Console.WriteLine();
                         return;
@@ -118,7 +116,7 @@ namespace EpamPractice
         public void Visualize()
         {
             System.Console.Clear();
-            Console.WriteLine("Visualizing ...");
+            System.Console.WriteLine("Task1 [Introduction to .net framework 4]");
             Process();
             System.Console.Write("Press any button to continue ...");
             System.Console.ReadKey();

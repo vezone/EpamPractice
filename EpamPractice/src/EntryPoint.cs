@@ -13,6 +13,7 @@ namespace EpamPractice
                 System.Console.WriteLine(
                     "Choice what task to run!\n" +
                     "1. Task1 [Introduction to .net framework 4]\n" +
+                    "2. Task2 [Basic programming constructs]\n" +
                     "Press \'e\' to exit");
                 System.Console.Write("select option: ");
                 var consoleKey = System.Console.ReadKey().Key;
@@ -26,13 +27,13 @@ namespace EpamPractice
                     }
                     case System.ConsoleKey.D1:
                     {
-                        task = new ReaderFormatter();
+                        task = new Task1();
                         task.Visualize();
                         break;
                     }
                     case System.ConsoleKey.D2:
                     {
-                        task = new ReaderFormatter();
+                        task = new Task2();
                         task.Visualize();
                         break;
                     }
