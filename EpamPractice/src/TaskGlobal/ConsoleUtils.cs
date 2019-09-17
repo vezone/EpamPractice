@@ -8,6 +8,8 @@ namespace EpamPractice
             System.Console.ForegroundColor = System.ConsoleColor.Red;
             System.Console.WriteLine("Error: " + message);
             System.Console.ForegroundColor = foregroundColor;
+            System.Console.Write("Press any button to continue ...");
+            System.Console.ReadKey();
         } 
     }
 }
